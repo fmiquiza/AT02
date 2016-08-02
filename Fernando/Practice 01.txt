@@ -1,0 +1,16 @@
+1 What is ruby?
+Ruby is a easy programming language which is dynamic, was developed
+aproximately 20 years ago but it was more used by Testers later because its
+simplicity to perform tasks.
+
+2 What pros/cons you considered from the point explained in the class
+Pros:
+Easy to learn, we don't have to "reinvent the wheel".
+Cons:
+Not to many documentation about what ruby exactly is and how it really works.
+
+3 According what we talked today, what are the 3 testing tiers?
+I could consider UI testing first because it's the area where you interact
+first as a tester/user, after that the Services are more related to increase 
+security and escalability to the software when adding processes or methods to be
+consumed by their http methods. And the Backend wich is mostly the DataBase.
