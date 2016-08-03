@@ -1,0 +1,7 @@
+print "Hello World!"
+puts "Hello World!"
+print "DBT class practice 2"
+puts "DBT class practice 2"
+print 2+2
+puts 5+5
+print "prueba"
