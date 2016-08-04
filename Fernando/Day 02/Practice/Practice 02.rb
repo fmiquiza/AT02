@@ -11,5 +11,5 @@ days = 31
 
 puts ""
 puts "********Convert seconds into minutes********"
-puts "the convertion of 30 seconds into minutes results in #{{seconds-30}/minutes} minutes"
+puts "the convertion of 30 seconds into minutes results in #{15*(1/minutes)}"
 
