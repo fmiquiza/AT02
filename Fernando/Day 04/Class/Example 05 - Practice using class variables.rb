@@ -26,6 +26,6 @@ class OldestSon < Father_s_Money
 	@@cash = @@cash-150
 end
 puts "And after the heist, he only has: #{OldestSon.cash} in his pocket now, enough to buy an IceCream and something to eat :)" 
-#puts OldestSon.cash
+
 
 
