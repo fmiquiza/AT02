@@ -1,5 +1,5 @@
 def Passenger
-2+2
+sum=2+2
+puts "the sum is #{sum}"
 end
 
-puts Passenger

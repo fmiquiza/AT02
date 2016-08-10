@@ -1,4 +1,5 @@
 class Item
+	
 	def initialize (item_name, quantity)
 		@item_name = item_name
 		@quantity = quantity
