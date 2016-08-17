@@ -2,7 +2,7 @@ class Twomethods
 	#******************** 1st method *****************
 	def askuser
 		print ""
-		puts "How many elements do you want in your array?"
+		puts "How many elements do you want in your array?: "
 		quantity = gets.chomp.to_i
 		
 		values = Array.new
@@ -16,13 +16,13 @@ class Twomethods
 		end
 		
 		quantity.times do | quantity |
-		print "Give me just only letters for the array #{quantity}"
+		print "Give me just only letters for the array #{quantity}: "
 		letters = gets.chomp.to_s
 		alphabetical.push(letters)
 		end
 
 		quantity.times do | quantity |
-		print "Give me just a mix of both #{quantity}"
+		print "Give me just a mix of both #{quantity}: "
 		mix = gets.chomp
 		both.push(mix)
 		end	
@@ -32,9 +32,8 @@ class Twomethods
 #********************END 1st method*******************
 
 #******************* BEGIN 2nd method ***************
-def twoarrays()
-	array1 = [10, 20, 30]
-	array2 = [3, 5, 20]
+def twoarrays(array1, array2)
+	
 	print  array1 & array2 
 	print " "
 	print array1.first 
@@ -50,16 +49,24 @@ def twoarrays()
 
 #******************* BEGIN 3rd method ***************
 
+def joinboth(jb1, jb2)
+print jb1.shift
+print jb2.push
+end
 #********************END 3rd method*******************
 
 
 end
 
 twomethods = Twomethods.new
-
 #            p twomethods.askuser #OK METHOD 1
+
+           first, second, third = twomethods.askuser #OK METHOD 2
+#           twomethods.twoarrays(second, third) #OK METHOD 2
+
+twomethods.twoarrays(first, second)
 #twomethods.firstarray
 #
-          value1 = twomethods.twoarrays #OK METHOD 2
+         # value1 = twomethods.twoarrays #OK METHOD 2
 #twomethods.printthefirst(value1)
 #twomethods.printthelast(value1)

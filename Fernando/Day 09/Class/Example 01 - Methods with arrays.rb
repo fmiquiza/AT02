@@ -15,7 +15,7 @@ class Arrays
 	end 
 
 	def printcommon (first, last)
-
+		
 	end
 
 
