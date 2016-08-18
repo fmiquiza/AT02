@@ -1,80 +1,91 @@
-$LOAD_PATH << '.'
+#$LOAD_PATH << '.'
 
-require 'Conversions.rb'
+#require 'Conversions.rb'
 
 
 class Registration
-	def askusername
-		include conversion.rb
+#	include Conversions
+	attr_accessor :listofpeople
+	
+	def initialize_parameters
+		
 		@user_name=nil
 		@ID=nil
-		@amount = nil
+		#@amount = nil
+		@listofpeople = Hash.new
 		#	@user_name =~ /^(?=.*[a-z])(?=.*[0-9]{,11})/
-
+		@users=File.open("execution.log",'a+')
+		@users.truncate(0)	
 	end
 
-	def asklength
+	def askUserAndID
 		
-
-		puts "Please give me the amount of users to register"
-		qty = gets.chomp.to_i
+		#puts "Please give me the user_name: "
+		#usrname = gets.chomp
 		
-		@List = Hash.new
-		
-		qty.times do | qty |
-
-		puts "Please give me the username: "
-		usrname = gets.chomp
-		
+		print "Please write your desired user ID:"
+		@ID=gets.chomp
+		@users.write("ID saved with the value of>> #{@ID}")
 		#	begin  *******        This chunk hangs up the program
 		#	if usrname =~ /^(?=.*[a-z])(?=.*[0-9]){0,11}/
 		#		puts "pass"
 		#		value1 = usrname
 		#	end	
 		#	end while  value1 == nil  ********ends*********
-
-		puts " Please write his/her ID: "
-		usrpwd = gets.chomp
-
-		   @List[usrname]= usrpwd
-			print @List
+		begin
+			print "Now provide a user_name with a length of 11 characters and must have only lowercases and if you like numbers also:"
+			@user_name=gets.chomp.to
+			complies=@user_name=~/^[a-z0-9]{,11}$/	
+		end while complies==nil
+		listofpeople.store(@ID,@user_name)
+		@users.write("The user_name value is >> #{@user_name}")
+		
 		end
 
 		def ask_amount
-
+			#puts "Please give me the amount of users to register"
+		#amount = gets.chomp.to_i
 		#puts "Please give me the amount of users to register"
-		#qty = gets.chomp.to_i
+		#amount = gets.chomp.to_i
 		
-			#begin
-		#		puts "set the amount of users?"
-		#		qty=gets.chomp.to_i
-		#		end while qty>15 or qty<3
-		#	@amount.write(" #{qty} users \n")
-		#	qty.times do
-		#	asklength
-		#	end
+			begin
+				print "set the amount of users to be registered: "
+				amount=gets.chomp.to_i
+				end while amount>5 or amount<2
+				@users.write(" #{amount} users registered! ")
+				amount.times do
+				askUserAndID
+			end
 		end
+		
+		def ask_type_of_convertion
+			puts "which type of conversion would you like?:"
+			puts "a)from milimiters to centimeters"
+			puts "b) from centimeters to meters"
+			puts "c) from meters to kilometers"
+			type_of_convertion = gets.chomp.to_s
+			print "option selected by user: #{type_of_convertion}"
+			return type_of_convertion
+		end	
 
-		#def ask_type_of_convertion
-		#	puts "which type of conversion would you like?:"
-		#	puts "a)from Milimiters to centimeters"
-		#	puts "b) from Centimeters to Meters"
-		#	puts "c) from meters to kilometers"
-			#result = gets.chomp.to_s
-			#return result
-		#end	
-
-		def calculation_result
+		def calculation_userchoice
+			case option
+			when "a" then 
+				puts "According to your answer please set the qty in milimeters for the conversion:" 
+				userchoice=gets.chomp.to_f
+				puts "#{userchoice} mm represents #{milimiters_to_centimeters} M."
+				@file.write("#{userchoice} mmm represents #{milimiters_to_centimeters} M.")
 			
-
-
+			end
 		end
 
 	end
 
-end
 
 r = Registration.new
-r.asklength
-#r.ask_type_of_convertion
+r.ask_amount
+r.askUserAndID
+
+r.calculation_userchoice
+r.ask_type_of_convertion
 
