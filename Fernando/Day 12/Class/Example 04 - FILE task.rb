@@ -15,6 +15,7 @@ def askfile
 	print "Please gimme the value for position #{linesqty}: "
 		
 	items = gets.chomp
+	
 	end
 
 	

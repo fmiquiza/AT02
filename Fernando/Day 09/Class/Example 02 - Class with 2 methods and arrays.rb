@@ -60,8 +60,7 @@ end
 
 twomethods = Twomethods.new
 #            p twomethods.askuser #OK METHOD 1
-
-           first, second, third = twomethods.askuser #OK METHOD 2
+first, second, third = twomethods.askuser #OK METHOD 2
 #           twomethods.twoarrays(second, third) #OK METHOD 2
 
 twomethods.twoarrays(first, second)

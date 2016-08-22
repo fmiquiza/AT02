@@ -10,8 +10,6 @@ class User
 		hashlength.times do | hashlength |
 		print "Give me the keys #{hashlength}: "
 		key = gets.chomp
-
-
 		print "Give me the values #{hashlength}: "
 		values = gets.chomp
 		
