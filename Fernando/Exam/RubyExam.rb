@@ -68,14 +68,19 @@ class Registration
 			return type_of_convertion
 		end	
 
-		def calculation_userchoice
-			case option
+		def userchoice
+			case userchoice
 			when "a" then 
 				puts "According to your answer please set the qty in milimeters for the conversion:" 
 				userchoice=gets.chomp.to_f
 				puts "#{userchoice} mm represents #{milimiters_to_centimeters} M."
 				@file.write("#{userchoice} mmm represents #{milimiters_to_centimeters} M.")
 			
+				puts "Insert the value in minutes:" 
+				result=gets.chomp.to_f
+				puts "#{result} min represents #{minutesToHours result} Hrs"
+				@file.write("#{result} min represents #{minutesToHours result} Hrs\n")
+
 			end
 		end
 
