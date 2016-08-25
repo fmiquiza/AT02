@@ -1,9 +1,9 @@
-Given(/^I select \"(Sign in)\"$/) do |message1|
-  puts "The your selected choice is >>>> #{message1}"
+Given(/^I select "(Sign in)"$/) do |message1|
+  pending #{}"your selected choice is >>>> #{message1}"
 end
 
-Given(/^I select \"(Create an account)\"$/) do |message2|
-  puts "The your selected choice is >>>> #{message2}"
+Given(/^I Select "(Create an account)" option$/) do |message2|
+  pending #{}"Then there's another choice you've made which is>>>> #{message2}"
 end
 
 #Given(/^I select (Sign in||Create an account) $/) do |arg1|

@@ -23,3 +23,12 @@ Then a new page must be loaded in the same browser
 	And the results should have the word written on each result
 	And doesn't have to be just in the url
 	And it can be also in the resulted url's description
+
+Scenario: Validate "Speech search" function
+
+Given there's an icon at the end of the search field in the main page which is a microphone image
+When you press this icon with your mouse
+Then a new small window should appear in the top left corner of the page area 
+	And it should ask you to have access to your microphone
+	And you should press the "accept" button
+	And the little window should dissapear and show you a new page that will ask you to say something to search.
