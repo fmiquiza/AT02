@@ -1,5 +1,9 @@
 Feature: Data comparisson list
 
+Background: Simulation 
+Given insert user fher
+When insert password 1033748
+Then I see a message
 
 @first
 Scenario: Item List if exists
