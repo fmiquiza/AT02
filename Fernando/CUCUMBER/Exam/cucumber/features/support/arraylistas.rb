@@ -1,0 +1,1 @@
+$arrayLista=["itema","itemb","itemc"]
